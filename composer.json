@@ -1,0 +1,30 @@
+{
+  "name": "akaramires/laravel-fullcontact",
+  "description": "Laravel FullContact",
+  "keywords": [
+    "social",
+    "contacts",
+    "api"
+  ],
+  "authors": [
+    {
+      "name": "Elmar Abdurayimov",
+      "email": "e.abdurayimov@gmail.com"
+    }
+  ],
+  "type": "library",
+  "require": {
+    "guzzlehttp/guzzle": "6.*",
+    "php": ">= 5.4"
+  },
+  "require-dev": {
+    "illuminate/support": "~5.0|~5.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Akaramires\\FullContact\\": "src/"
+    }
+  },
+  "license": "MIT",
+  "minimum-stability": "dev"
+}
