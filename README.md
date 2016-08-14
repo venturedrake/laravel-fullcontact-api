@@ -12,7 +12,7 @@
 Lookup by email:
 	* `$person = FullContact::lookupByEmail( 'shawn@mantelope.io' );`
 
-Lookup by person:
+Lookup by phone:
 	* `$person = FullContact::lookupByPhone( '123-456-7890' );`
 
 Lookup by Twitter: 
