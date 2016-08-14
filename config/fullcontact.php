@@ -16,5 +16,5 @@
          | FullContact Settings.
          |
          */
-        'apikey' => "xxxxxxxxxxxx",
+        'apikey' => env('FULLCONTACT_API_KEY', ''),
     );
