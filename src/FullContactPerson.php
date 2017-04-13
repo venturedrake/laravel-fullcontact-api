@@ -28,7 +28,7 @@ class FullContactPerson extends FullContact
      * Supported lookup methods
      * @var $_supportedMethods
      */
-    protected $_supportedMethods = array('email', 'phone', 'twitter', 'facebookUsername');
+    protected $_supportedMethods = array('email', 'phone', 'twitter', 'facebookUsername', 'stats');
     protected $_resourceUri = '/person.json';
 
     public function lookupByEmail($search)
@@ -63,6 +63,12 @@ class FullContactPerson extends FullContact
     {
         $this->_execute(array('facebookUsername' => $search, 'method' => 'facebookUsername'));
 
+        return $this->response_obj;
+    }
+
+    public function accountStats($search = NULL)
+    {
+        $this->_execute(array('period' => $search, 'method' => 'stats'), '/stats.json');
         return $this->response_obj;
     }
 }

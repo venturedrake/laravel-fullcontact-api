@@ -21,3 +21,6 @@ Lookup by Twitter:
 Lookup by Facebook:
 	& `$person = FullContact::lookupByFacebook( 'mike-corkum' );`
 
+Account Stats:
+	& `$stats = FullContact::accountStats( '2012-08' );`
+	* Period parameter is optional *
