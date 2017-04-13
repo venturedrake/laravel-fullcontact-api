@@ -19,7 +19,8 @@ Lookup by Twitter:
 	* `$person = FullContact::lookupByTwitter( 'MantelopeMusk' );`
 
 Lookup by Facebook:
-	& `$person = FullContact::lookupByFacebook( 'mike-corkum' );`
+	& `$person = FullContact::lookupByFacebook( 'mike-corkum' ,'US' );`
+	* countryCode parameter defaults to US if not provided *
 
 Account Stats:
 	& `$stats = FullContact::accountStats( '2012-08' );`

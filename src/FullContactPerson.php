@@ -45,9 +45,9 @@ class FullContactPerson extends FullContact
         return $this->response_obj;
     }
 
-    public function lookupByPhone($search)
+    public function lookupByPhone($search, $country = 'US')
     {
-        $this->_execute(array('phone' => $search, 'method' => 'phone'));
+        $this->_execute(array('phone' => $search, 'countryCode' => $country, 'method' => 'phone'));
 
         return $this->response_obj;
     }
