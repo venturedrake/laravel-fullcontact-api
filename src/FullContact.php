@@ -68,7 +68,7 @@ class FullContact
      * @return  object
      * @throws  FullContactExceptionNotImplemented
      */
-	protected function _execute($params = array())
+	protected function _execute($params = array(), $resource_uri = NULL)
 	{
 		if(!in_array($params['method'], $this->_supportedMethods)){
 			throw new FullContactExceptionNotImplemented(__CLASS__ .
@@ -76,10 +76,16 @@ class FullContact
 		}
 
 		$params['apiKey'] = urlencode($this->_apiKey);
+		if($resource_uri === NULL)
+		{
+			$fullUrl = $this->_baseUri . $this->_version . $this->_resourceUri .'?' . http_build_query($params);
 
-		$fullUrl = $this->_baseUri . $this->_version . $this->_resourceUri .
-		'?' . http_build_query($params);
-
+		}
+		else
+		{
+			$fullUrl = $this->_baseUri . $this->_version . $resource_uri .'?' . http_build_query($params);
+		}
+		
 		$cached_json = $this->_getFromCache($fullUrl);
 		if ( $cached_json !== false )
 		{
