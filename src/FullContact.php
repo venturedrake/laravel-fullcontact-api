@@ -96,7 +96,6 @@ class FullContact
 			$cached_json = $this->_getFromCache($fullUrl);
 		}
 
-		// $cached_json = $this->_getFromCache($fullUrl);
 		if ( $cached_json !== false )
 		{
 			$this->response_json = $cached_json;
