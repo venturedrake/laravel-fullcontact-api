@@ -84,9 +84,18 @@ class FullContact
 		else
 		{
 			$fullUrl = $this->_baseUri . $this->_version . $resource_uri .'?' . http_build_query($params);
+			
 		}
 		
-		$cached_json = $this->_getFromCache($fullUrl);
+		if ($resource_uri === "/stats.json")
+		{
+			$cached_json = false;
+		}
+		else
+		{
+			$cached_json = $this->_getFromCache($fullUrl);
+		}
+
 		if ( $cached_json !== false )
 		{
 			$this->response_json = $cached_json;
